@@ -36,7 +36,7 @@ def resize_and_show(name,image):
   #Mostramos la imagen
   cv2.imshow(name,img)
 
-#Obtenemos la clase selfie_segmentation, la cual nos ayudará a 
+#Obtenemos la clase selfie_segmentation, la cual nos ayudará a realizar la segmentación
 mp_selfie_segmentation = mp.solutions.selfie_segmentation
 
 #Incializamos un contexto "with" y utilizamos los valores configurables de SelfieSegmentation
