@@ -44,7 +44,7 @@ mp_selfie_segmentation = mp.solutions.selfie_segmentation
 #ya que nos permite de un modelo de rango completo mejor figuras dentro de los 5 metros
 with mp_selfie_segmentation.SelfieSegmentation(model_selection=1) as selfie_segmentation:
   #Obtenemos el nombre de la imagen que queremos segmentar
-  image_name="prueba 3.jpg"
+  image_name="prueba 1.jpg"
   
   #Inicializamos la imagen con OpenCV
   image_o=cv2.imread(image_name)
@@ -64,11 +64,8 @@ with mp_selfie_segmentation.SelfieSegmentation(model_selection=1) as selfie_segm
   eroded = binary_erosion(tr_binary, structure=np.ones((1, 1)), iterations=20)
   
   #Obtendremos una matriz con valores True y False
-  #De la siguiente manera haremos el cambio de tipo de dato
-  #y cambiaremos los valores 1 por 255
-  image = np.asarray(eroded, dtype = float)
-  image[image==1]=255
-  image=np.float32(image)
+  #De la siguiente manera haremos el cambio de tipo de dato a float32
+  image=np.float32(eroded)
   
   #Realizamos un filtro medianBlur para suavizar la imagen
   image = cv2.medianBlur(image, 5)
