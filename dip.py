@@ -44,7 +44,7 @@ mp_selfie_segmentation = mp.solutions.selfie_segmentation
 #ya que nos permite de un modelo de rango completo mejor figuras dentro de los 5 metros
 with mp_selfie_segmentation.SelfieSegmentation(model_selection=1) as selfie_segmentation:
   #Obtenemos el nombre de la imagen que queremos segmentar
-  image_name="prueba 1.jpg"
+  image_name="prueba 2.jpg"
   
   #Inicializamos la imagen con OpenCV
   image_o=cv2.imread(image_name)
